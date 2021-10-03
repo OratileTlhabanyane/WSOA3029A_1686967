@@ -12,8 +12,8 @@ async function getCryptomarketcap()
     
     const cryptocurrentprice =
     [
-        {name: 'YEAR 2021', price: parseInt (data21.market_data.current_price.zar)},
-        {name: 'YEAR 2020', price: parseInt (data20.market_data.current_price.zar)}, 
+        {name: 'Value of 1 BTC IN ZAR in 2021', price: parseInt (data21.market_data.current_price.zar)},
+        {name: 'Value of 1 BTC IN ZAR in 2020', price: parseInt (data20.market_data.current_price.zar)}, 
     ];
     
     const width = 1000;

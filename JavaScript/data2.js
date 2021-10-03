@@ -12,8 +12,8 @@ async function getCryptocurrentprices()
     
     const cryptocurrentprice =
     [
-        {name: 'YEAR 2019', price: parseInt (data19.market_data.current_price.zar)},
-        {name: 'YEAR 2018', price: parseInt (data18.market_data.current_price.zar)}, 
+        {name: 'Value of 1 BTC IN ZAR in 2019', price: parseInt (data19.market_data.current_price.zar)},
+        {name: 'Value of 1 BTC IN ZAR in 2018', price: parseInt (data18.market_data.current_price.zar)}, 
     ];
     
     const width = 1000;
@@ -31,7 +31,7 @@ async function getCryptocurrentprices()
     
     function x2Axis (g)
     {
-        g.attr('transform', `translate (0, ${height - bottomMargin})`).call(d3.axisBottom(x2).tickFormat(i => cryptocurrentprice[i].name)).attr('font-size', '17px').attr('color', 'white');
+        g.attr('transform', `translate (0, ${height - bottomMargin})`).call(d3.axisBottom(x2).tickFormat(i => cryptocurrentprice[i].name)).attr('font-size', '14px').attr('color', 'white');
     }
     function y2Axis (g)
     {
