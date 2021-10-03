@@ -1,0 +1,48 @@
+.layoutblogs{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #faebd7;
+    width: 50%;
+    height: 80px solid #fff;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 80px;
+    margin: 80px auto;
+    max-width:  700px;
+}
+img{
+    width:100%;
+    padding: 80px;
+    margin: 80px auto;
+    max-width:  700px;
+
+}
+.phText{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: floralwhite;
+    width: 30%;
+    height: 40px solid #fff;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 40px;
+    margin: 40px auto;
+    max-width:  700px;
+    float: left;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .layoutblogs{
+        width: 100%;
+        overflow-x: hidden; 
+        margin: 0px auto;
+        
+        
+    }
+
+    img{
+      
+        padding: 0px;
+    }
+}

@@ -1,0 +1,149 @@
+
+article{
+    text-align: center;
+}
+
+body{
+    background-color: #E09F7D;
+}
+.h-card{
+    
+    background-color: #66522e;
+    max-width: 300px;
+    
+    
+}
+.section-1{
+    margin-left: 80px;
+    color: white;
+    width:30%;
+    height:30%;
+    background-color: blue;
+}
+.section-2{
+    position: relative;
+    margin-left: 60%;
+    
+    color: white;
+    
+    background-color: blue;
+}
+.section-3{
+    position: relative;
+
+    background-color:purple;
+
+}
+.section-4{
+    position: relative;
+    background-color:yellow;
+
+}
+
+a {
+    color: rgb(223, 223, 223);
+    
+}
+
+.navlinks{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    
+   
+}
+.navlinks li{
+    list-style: none; 
+    width: 140px;
+    height: 30px;
+    background-color: #A01A3D;
+    border-radius: 40px;
+    padding: 9px;
+    text-align: center;
+    margin-top: 10px;
+}
+.navlinks {
+    color: rgb(223, 223, 223);
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    
+
+}
+
+.svg{
+    display: none;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 400px) {
+    .nav-links {
+       width: 60%;
+       
+    }
+    .logo{
+        width: 10%;
+    }
+   
+
+    }
+
+@media screen and (max-width: 1024px) {
+body{
+    overflow-x: hidden;
+    width:100%;
+}
+    .navlinks{
+    position: absolute;
+    right: 0px;
+    height: 82vh;
+    top: 8vh;
+    background-color: #A01A3D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in;
+    
+
+}
+.navlinks li{
+    opacity: 0;
+}
+.section-2{
+    width: 100%;
+    overflow-x: hidden; 
+    margin: 0px auto;
+}
+
+
+.svg
+{
+    display: block;
+}
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navlinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+
+    }
+}
+@media screen and (max-width: 1024px) {
+    section{
+        overflow-x: hidden;   
+    }
+    
+}

@@ -1,0 +1,32 @@
+body{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #E09F7D;
+ 
+    font-family: 'Courier New', Courier, monospace;
+  
+}
+
+*{
+    box-sizing: border-box;
+}
+.column {
+	float: left;
+	width: 33.33%;
+	padding: 5px;
+}
+
+.row::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.barcontainer
+{
+    width: 250px;
+    height:200px;
+}
+
+
+  
