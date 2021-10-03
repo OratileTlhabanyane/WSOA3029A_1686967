@@ -1,9 +1,11 @@
-.data1{
-    color: blue;
-}
-.data2{
-    color:purple;
-}
-.data3{
-    color: yellow;
+.layoutgraphs{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #3b202b59;
+    width: 60%;
+    height: 100px solid #fff;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 80px auto;
+    max-width:  1000px;
 }
