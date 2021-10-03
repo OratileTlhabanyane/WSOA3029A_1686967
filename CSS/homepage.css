@@ -18,7 +18,7 @@ body{
     color: white;
     width:30%;
     height:30%;
-    background-color: blue;
+    background-color: #A01A3D;
 }
 .section-2{
     position: relative;
@@ -26,17 +26,17 @@ body{
     
     color: white;
     
-    background-color: blue;
+    background-color: #b14461;
 }
 .section-3{
     position: relative;
 
-    background-color:purple;
+    background-color:#580f23;
 
 }
 .section-4{
     position: relative;
-    background-color:yellow;
+    background-color:#ec668a;
 
 }
 
