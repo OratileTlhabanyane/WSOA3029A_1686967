@@ -27,8 +27,12 @@ async function getCryptomarketcap()
     const x1 = d3.scaleBand().domain(d3.range(cryptocurrentprice.length)).range([leftMargin, width - rightMargin]). padding(0.5);
     const y1 = d3.scaleLinear().domain([0 , 1000000]).range([height - bottomMargin, topMargin]);
     
-    drawGraph1.append('g').attr('fill', '#faebd7').selectAll('rect').data(cryptocurrentprice.sort ((a, b) => d3.ascending(a.price, b.price))).join('rect').attr('x', (d, i) => x1(i)).attr('y', (d) => y1(d.price)).attr('height', d => y1(0) - y1(d.price)).attr('width', x1.bandwidth());
+    const graph1 = drawGraph1.append('g')
+
+    //drawing the bars 
+    graph1.attr('fill', '#faebd7').selectAll('rect').data(cryptocurrentprice.sort ((a, b) => d3.ascending(a.price, b.price))).join('rect').attr('x', (d, i) => x1(i)).attr('y', (d) => y1(d.price)).attr('height', d => y1(0) - y1(d.price)).attr('width', x1.bandwidth());
     
+   
     function x1Axis (g)
     {
         g.attr('transform', `translate (0, ${height - bottomMargin})`).call(d3.axisBottom(x1).tickFormat(i => cryptocurrentprice[i].name)).attr('font-size', '14px').attr('color', 'white');
@@ -41,6 +45,5 @@ async function getCryptomarketcap()
     drawGraph1.append ('g').call(x1Axis);
     drawGraph1.node();    
 }
-getCryptomarketcap()
-
+getCryptomarketcap(); 
 

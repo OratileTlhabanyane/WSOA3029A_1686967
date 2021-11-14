@@ -16,14 +16,8 @@ href:'../TheoryBlogPosts/Blog3.html'},
 { title:"BLOG 4",  
 href:'../TheoryBlogPosts/Blog4.html'},
 
-{ title: "BLOG 5", 
-href:'../TheoryBlogPosts/Blog5.html'},
-
-{ title:"BLOG 6", 
+{ title:"More Blogs", 
 href:'../TheoryBlogPosts/Blog6.html'},
-
-{ title:"BLOG 7",
-href:'../TheoryBlogPosts/Blog7.html'},
 
 ];
 
@@ -45,11 +39,8 @@ const dataj = [
     
     href: "../Data/Data3.html"},
     
-    { title:"Wireframes", 
-    href:'../TheoryBlogPosts/wireframes.html'},
 
-    
-    ];
+];
     
     
 
@@ -63,6 +54,8 @@ const navlinks = [
     {title: 'BLOGS', link: '../TheoryBlogPosts/BlogPage.html'},
 
     {title: 'DATA', link: '../Data/DataPage.html'},
+
+    {title: 'DESIGN', link: '../TheoryBlogPosts/wireframes.html'},
 
     {title: 'CONTACT', link: '../ContactUs/ContactPage.html'},
 
