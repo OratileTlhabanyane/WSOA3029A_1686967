@@ -89,38 +89,21 @@ graph1.attr('fill', '#faebd7').selectAll('.dots').data(cryptocurrentprice.sort (
     drawGraph1.append ('g').call(x1Axis);
     drawGraph1.node();    
 
-//interactive
+//interactivity
 $(document).ready(function() {
     
     
-    $(".btc-2021").click(function(){ $('.hide').hide();
-    $(".btc2021-fact").toggle();
-    });
+    $(".btc-2021").click(function(){ $('.hide').hide(); $(".btc2021-fact").toggle();});
     
-      $(".btc-2020").click(function(){
-         $('.hide').hide();
-      $(".btc2020-fact").toggle();
-    });
+    $(".btc-2020").click(function(){ $('.hide').hide(); $(".btc2020-fact").toggle();});
     
-      $(".btc-2019").click(function(){
-        $('.hide').hide();
-        $(".btc2019-fact").toggle();
-      });
+    $(".btc-2019").click(function(){ $('.hide').hide(); $(".btc2019-fact").toggle();});
     
-      $(".btc-2018").click(function(){
-        $('.hide').hide();
-        $(".btc2018-fact").toggle();
-      });
-
-      $(".btc-2017").click(function(){
-        $('.hide').hide();
-        $(".btc2017-fact").toggle();
-      });
-      
-      $(".btc-2016").click(function(){
-        $('.hide').hide();
-        $(".btc2016-fact").toggle();
-      });
+    $(".btc-2018").click(function(){$('.hide').hide(); $(".btc2018-fact").toggle();});
+    
+    $(".btc-2017").click(function(){$('.hide').hide(); $(".btc2017-fact").toggle();});
+    
+    $(".btc-2016").click(function(){$('.hide').hide(); $(".btc2016-fact").toggle();});
   
   });
     

@@ -13,8 +13,6 @@ href:'../TheoryBlogPosts/Blog2.html'},
 { title: "BLOG 3",  
 href:'../TheoryBlogPosts/Blog3.html'},
 
-{ title:"BLOG 4",  
-href:'../TheoryBlogPosts/Blog4.html'},
 
 { title:"More Blogs", 
 href:'../TheoryBlogPosts/Blog6.html'},
@@ -22,10 +20,6 @@ href:'../TheoryBlogPosts/Blog6.html'},
 ];
 
 const dataj = [
-
-    { title:"DATA",  
-    
-    href: "../Data/DataPage.html"},
 
     { title:"Data 1",  
     
@@ -42,10 +36,6 @@ const dataj = [
 
 ];
     
-    
-
-
-
 const navlinks = [
     {title: 'HOME', link: '../index.html'},
 
