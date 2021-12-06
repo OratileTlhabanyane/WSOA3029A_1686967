@@ -35,6 +35,19 @@ const dataj = [
     
 
 ];
+
+const exam = [
+
+    { title:"Data-driven Artwork",  
+    
+    href: "../Exam/Data4.html"},
+    
+    { title:"Data Visualization",  
+    
+    href: "../Exam/Data5.html"},
+    
+
+];
     
 const navlinks = [
     {title: 'HOME', link: '../index.html'},
@@ -46,6 +59,8 @@ const navlinks = [
     {title: 'DATA', link: '../Data/DataPage.html'},
 
     {title: 'DESIGN', link: '../TheoryBlogPosts/wireframes.html'},
+
+    {title: 'EXAM', link: '../Exam/exampage.html'},
 
     {title: 'CONTACT', link: '../ContactUs/ContactPage.html'},
 
@@ -75,6 +90,12 @@ const InitialiseHeader = () =>
             createData();
             newItem.appendChild(datalist);
         }
+    
+    if (navlinks [i].title == "EXAM")
+    { 
+        createExam();
+        newItem.appendChild(examlist);
+    }
     newItem.appendChild(newLink);
         ul.appendChild(newItem);
     }
@@ -110,6 +131,21 @@ const InitialiseHeader = () =>
                 dataLink.innerHTML = dataj[i].title;
                 newDataitem.appendChild(dataLink);
                 datalist.appendChild(newDataitem);
+            }
+        }
+
+        const examlist = document.createElement('ul');
+        function createExam()
+        { 
+            const examlength = exam.length
+            for (i =0; i< examlength; i++)
+            { 
+                const newExamitem = document.createElement('li');
+                const examLink = document.createElement('a');
+                examLink.href = exam[i].href;
+                examLink.innerHTML = exam[i].title;
+                newExamitem.appendChild(examLink);
+                examlist.appendChild(newExamitem);
             }
         }
 
