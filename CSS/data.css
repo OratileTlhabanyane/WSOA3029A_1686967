@@ -12,6 +12,7 @@
 
 }
 
+
 #data3 li {
     margin-bottom: 1rem;
     padding: 1rem;
@@ -34,29 +35,41 @@
   }
   
   .btc2021-fact{
+    display: none;
+    cursor: pointer;
     top: 10%;
     left: 45%;
   }
   
   .btc2020-fact{
+    display: none;
+    cursor: pointer;
     top: 16%;
     left: 35%;
   }
   
   .btc2019-fact{
+    display: none;
+    cursor: pointer;
     top: 25%;
     left: 9%;
   }
   
   .btc2018-fact{
+    display: none;
+    cursor: pointer;
     top: 50%;
     left: 18%;
   }
   .btc2017-fact{
+    display: none;
+    cursor: pointer;
     top: 30%;
     left: 25%;
   }
   .btc2016-fact{
+    display: none;
+    cursor: pointer;
     top: 60%;
     left: 15%;
   }
@@ -218,8 +231,9 @@ text {
   font-size: 1.25em;
   margin-top: 0.25em;
 }
-@media screen and (max-width: 1024px) {
+
+@media screen and (max-width: 375px) {
     g{
-        padding-right: 100px;
+        padding-right: 50px;
     }
 }

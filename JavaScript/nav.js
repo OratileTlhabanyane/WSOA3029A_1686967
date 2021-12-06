@@ -40,11 +40,11 @@ const exam = [
 
     { title:"Data-driven Artwork",  
     
-    href: "../Exam/Data4.html"},
+    href: "../Exam/Data5.html"},
     
     { title:"Data Visualization",  
     
-    href: "../Exam/Data5.html"},
+    href: "../Exam/Data4.html"},
     
 
 ];

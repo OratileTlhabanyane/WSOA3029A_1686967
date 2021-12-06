@@ -1,7 +1,7 @@
-const apiurl21 = 'https://api.coingecko.com/api/v3/coins/bitcoin/history?date=01-10-2021';
-const apiurl20 = 'https://api.coingecko.com/api/v3/coins/bitcoin/history?date=01-10-2020';
-const apiurl19 = 'https://api.coingecko.com/api/v3/coins/bitcoin/history?date=01-10-2019';
-const apiurl18 = 'https://api.coingecko.com/api/v3/coins/bitcoin/history?date=01-10-2018';
+const apiurl21 = 'https://api.coingecko.com/api/v3/coins/ethereum/history?date=01-10-2021';
+const apiurl20 = 'https://api.coingecko.com/api/v3/coins/ethereum/history?date=01-10-2020';
+const apiurl19 = 'https://api.coingecko.com/api/v3/coins/ethereum/history?date=01-10-2019';
+const apiurl18 = 'https://api.coingecko.com/api/v3/coins/ethereum/history?date=01-10-2018';
 async function getCryptocurrentprices()
 
 { const response = await fetch(apiurl21);
@@ -19,24 +19,38 @@ async function getCryptocurrentprices()
     const response4 = await fetch(apiurl18);
     const data18 = await response4.json();
     console.log(data18.market_data);
+
     
-   var svg = d3.select('#data4');
+        const margin = { left: 50, top: 10, right: 50, bottom: 30 }
+    const getRatio = side => (margin[side] / width) * 100 + '%'
+
+const marginRatio = {
+  left: getRatio('left'),
+  top: getRatio('top'),
+  right: getRatio('right'),
+  bottom: getRatio('bottom'),}
+
+
+   var svg = d3.select('#data4').style('padding',marginRatio.top +' ' + marginRatio.right + ' ' + marginRatio.bottom + ' ' + marginRatio.left + ' ');
     var height = svg.attr('height');
     var width = svg.attr('width');
 
     const cryptocurrentprice = {
-        nodes: [{ name: 'btc1', radius: parseInt (data19.market_data.current_price.zar / 2000) }, {name: 'btc2', radius: parseInt (data20.market_data.current_price.zar / 2000)}, {name: 'btc3', radius: parseInt (data19.market_data.current_price.zar / 2000)}, { name: 'btc4', radius: parseInt (data18.market_data.current_price.zar /2000)}],
+        nodes: [{ name: 'eth1', radius: parseInt (data19.market_data.current_price.zar / 20) }, {name: 'eth2', radius: parseInt (data20.market_data.current_price.zar / 20)}, {name: 'eth3', radius: parseInt (data19.market_data.current_price.zar / 20)}, { name: 'eth4', radius: parseInt (data18.market_data.current_price.zar /20)}],
         links: [
-            {source: 'btc1', target: 'btc2'},
-            { source: 'btc2', target: 'btc3'},
-            {source: 'btc4', target: 'btc3'}
+            {source: 'eth1', target: 'eth2'},
+            { source: 'eth2', target: 'eth3'},
+            {source: 'eth4', target: 'eth3'}
         ]
     
        /* {name: 'Value of 1 BTC IN ZAR in 2021', price: parseInt (data21.market_data.current_price.zar)},
         {name: 'Value of 1 BTC IN ZAR in 2020', price: parseInt (data20.market_data.current_price.zar)}, 
     */
  
-    }
+    
+
+}
+ 
      var simultation = d3.forceSimulation(cryptocurrentprice.nodes).force('charge', d3.forceManyBody().strength(300)).force('center', d3.forceCenter(width / 2, height /2)).force('collide', d3.forceCollide(function(d){return d.radius})).on('tick', ticked);
      var links = svg.append('g').selectAll('line').data(cryptocurrentprice.links).enter().append('line').attr('stroke-width', 3).style('stroke', 'orange');
      var drag = d3.drag().on('start', dragstarted).on('drag', dragged).on('end', dragended);

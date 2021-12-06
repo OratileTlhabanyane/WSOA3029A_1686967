@@ -43,15 +43,25 @@ async function getCryptomarketcap()
 
     const width = 1000;
     const height = 600;
-    const topMargin = 50;
+    const topMargin = 60;
     const bottomMargin = 80;
     const rightMargin = 50;
     const leftMargin = 50;
     
+    const margin = { left: 50, top: 10, right: 50, bottom: 30 }
+    const getRatio = side => (margin[side] / width) * 100 + '%'
+
+const marginRatio = {
+  left: getRatio('left'),
+  top: getRatio('top'),
+  right: getRatio('right'),
+  bottom: getRatio('bottom')
+}
+    
    
 
     //DRAW THE GRAPH X-LINE AND Y-LINE
-    const drawGraph1 = d3.select('#data3').append('svg').attr('height', height - topMargin - bottomMargin).attr('width', width - rightMargin - leftMargin).attr('viewBox', [0, 0, width, height]);
+    const drawGraph1 = d3.select('#data3').append('svg').attr('height', height - topMargin - bottomMargin).attr('width', width - rightMargin - leftMargin).attr('viewBox', [0, 0, width, height]).style('padding',marginRatio.top +' ' + marginRatio.right + ' ' + marginRatio.bottom + ' ' + marginRatio.left + ' ');
     const x3scale = d3.scaleBand().domain(d3.range(cryptocurrentprice.length)).range([leftMargin, width - rightMargin]). padding(1);
     const y3scale = d3.scaleLinear().domain([0 , 1000000]).range([height - bottomMargin, topMargin]);
 

@@ -19,7 +19,16 @@ async function getCryptocurrentprices()
     const width = 600;
     const height = 500;
     const colors = d3.scaleOrdinal(d3.schemeDark2)
-    const svg = d3.select('#data2').append('svg').attr('width', width).attr('height', height).style('background', '#3b202b59');
+    const margin = { left: 0, top: 10, right: 50, bottom: 30 }
+    const getRatio = side => (margin[side] / width) * 100 + '%'
+
+const marginRatio = {
+  left: getRatio('left'),
+  top: getRatio('top'),
+  right: getRatio('right'),
+  bottom: getRatio('bottom')
+}
+    const svg = d3.select('#data2').append('svg').attr('width', width).attr('height', height).style('padding',marginRatio.top +' ' + marginRatio.right + ' ' + marginRatio.bottom + ' ' + marginRatio.left + ' ').style('background', '#3b202b59');
     const data_ = d3.pie().sort(null).value(function (d) {return d.price;})
     (cryptocurrentprice);
     console.log(data_);

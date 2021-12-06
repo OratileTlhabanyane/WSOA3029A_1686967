@@ -19,24 +19,90 @@ async function getCryptocurrentprices()
 
     const trendingcoins =
     [
-        {name1: '1', score1: parseInt (nft1.coingecko_score)},
-        {name2: '2', score2: parseInt (nft2.coingecko_score)},
-        {name3: '3', score3: parseInt (nft3.coingecko_score)},
+        {name: '1', score: parseInt (nft1.coingecko_score *15)},
+        {name: '2', score: parseInt (nft2.coingecko_score *15)},
+        {name: '3', score: parseInt (nft3.coingecko_score *15)},
 
-        {name1: '1', d1: nft1.description.en},
-        {name2: '2', d2: nft2.description.en},
-        {name3: '3', d3: nft3.description.en},
+
      
     ];
-    console.log(trendingcoins);
+   
 
-    svg1= d3.select('.image-score').selectAll('text').data(trendingcoins).enter().append('text', 'score' ).text(function (d) { return d.score1}).attr('font-size', '20px').attr('color', 'white');
-    svg2= d3.select('.image-score2').selectAll('text').data(trendingcoins).enter().append('text', 'score' ).text(function (d) { return d.score2}).attr('font-size', '20px').attr('color', 'white');
-    svg3= d3.select('.image-score3').selectAll('text').data(trendingcoins).enter().append('text', 'score' ).text(function (d) { return d.score3}).attr('font-size', '20px').attr('color', 'white');
+    console.log(trendingcoins);    
+ var domain = [0, trendingcoins[trendingcoins.length - 1]];
+ var range = [0, 200];
+ 
+ var margin = {
+   top: 300,
+   left: 200,
+   right: 100,
+   bottom: 400
+ };
+ 
+ const margin1 = { left: 50, top: 10, right: 50, bottom: 30 }
+ const getRatio = side => (margin1[side] / width) * 100 + '%'
 
-    svg1= d3.select('.image-description').selectAll('text').data(trendingcoins).enter().append('text').text(function (d) { return d.d1}).attr('font-size', '20px').attr('color', 'white');
-    svg2= d3.select('.image-description2').selectAll('text').data(trendingcoins).enter().append('text').text(function (d) { return d.d2}).attr('font-size', '20px').attr('color', 'white');
-    svg3= d3.select('.image-description3').selectAll('text').data(trendingcoins).enter().append('text').text(function (d) { return d.d3}).attr('font-size', '20px').attr('color', 'white');
+const marginRatio = {
+left: getRatio('left'),
+top: getRatio('top'),
+right: getRatio('right'),
+bottom: getRatio('bottom'),}
 
+ var svg = d3.select("#data5").append("svg").attr('class', 'image')
+   .attr("width", 1000)
+   .attr("height", 1000)
+   .style('padding',marginRatio.top +' ' + marginRatio.right + ' ' + marginRatio.bottom + ' ' + marginRatio.left + ' ');
+ 
+ var height = svg.attr("height") - margin.top - margin.bottom;
+ var width = svg.attr("width") - margin.left - margin.right;
+ 
+ var sqrt = d3.scaleSqrt()
+     .range(range)
+     .domain(domain);
+ 
+ 
+ var g = svg.append("g")
+     .attr("transform", `translate(${margin.left}, ${margin.top})`);
+ 
+ g.selectAll(".sqrt")
+     .data(trendingcoins)
+     .enter()
+     .append("circle")
+     .attr('id','data5')
+     .classed("sqrt", true)
+     .attr("r", function(d) {return d.score})
+     .attr("fill", "none")
+     .attr("stroke", "#000")
+     .attr("stroke-width", 0.7)
+  
+     
+     let test = document.getElementById("data5");
+     test.addEventListener("mouseenter", function( event ) {
+       // highlight the mouseenter target
+       event.target.style.background = "purple";
+      
+     
+       // reset the color after a short delay
+       setTimeout(function() {
+         event.target.style.background = "";
+       }, 500);
+     }, false);
+
+     // This handler will be executed every time the cursor
+// is moved over a different list item
+test.addEventListener("mouseover", function( event ) {
+  // highlight the mouseover target
+  event.target.style.background = "orange";
+  
+
+  // reset the color after a short delay
+  setTimeout(function() {
+    event.target.style.background = "";
+  }, 500);
+}, false);
 }
 getCryptocurrentprices();
+ 
+ 
+ 
+     

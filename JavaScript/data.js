@@ -21,9 +21,19 @@ async function getCryptomarketcap()
     const topMargin = 50;
     const bottomMargin = 50;
     const rightMargin = 50;
-    const leftMargin = 50;
+    const leftMargin = 150;
+
+    const margin = { left: 50, top: 10, right: 50, bottom: 30 }
+    const getRatio = side => (margin[side] / width) * 100 + '%'
+
+const marginRatio = {
+  left: getRatio('left'),
+  top: getRatio('top'),
+  right: getRatio('right'),
+  bottom: getRatio('bottom')
+}
     
-    const drawGraph1 = d3.select('#data1').append('svg').attr('height', height - topMargin - bottomMargin).attr('width', width - rightMargin - leftMargin).attr('viewBox', [0, 0, width, height]);
+    const drawGraph1 = d3.select('#data1').append('svg').style('padding',marginRatio.top +' ' + marginRatio.right + ' ' + marginRatio.bottom + ' ' + marginRatio.left + ' ').attr('height', height - topMargin - bottomMargin).attr('width', width - rightMargin - leftMargin).attr('preserveAspectRatio', 'xMinYMin meet').attr('viewBox', [0, 0, width, height]);
     const x1 = d3.scaleBand().domain(d3.range(cryptocurrentprice.length)).range([leftMargin, width - rightMargin]). padding(0.5);
     const y1 = d3.scaleLinear().domain([0 , 1000000]).range([height - bottomMargin, topMargin]);
     
@@ -43,7 +53,14 @@ async function getCryptomarketcap()
     }
     drawGraph1.append ('g').call(y1Axis);
     drawGraph1.append ('g').call(x1Axis);
-    drawGraph1.node();    
+    drawGraph1.node();
+
+    
+
+
+
+
 }
+
 getCryptomarketcap(); 
 
