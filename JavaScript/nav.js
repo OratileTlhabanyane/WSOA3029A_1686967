@@ -14,7 +14,7 @@ href:'../TheoryBlogPosts/Blog2.html'},
 href:'../TheoryBlogPosts/Blog3.html'},
 
 
-{ title:"More Blogs", 
+{ title:"READ MORE BLOGS", 
 href:'../TheoryBlogPosts/Blog6.html'},
 
 ];
@@ -38,11 +38,11 @@ const dataj = [
 
 const exam = [
 
-    { title:"Data-driven Artwork",  
+    { title:"Data-drivenArtwork",  
     
     href: "../Exam/Data5.html"},
     
-    { title:"Data Visualization",  
+    { title:"DataVisual&Blog",  
     
     href: "../Exam/Data4.html"},
     
