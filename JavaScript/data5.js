@@ -1,6 +1,6 @@
-const boredApeNFT = 'https://api.coingecko.com/api/v3/coins/unicly-bored-ape-yacht-club-collection?';
-const wizardsdragonsNFT = 'https://api.coingecko.com/api/v3/coins/wizards-and-dragons?';
-const cryptoToadsNFT = 'https://api.coingecko.com/api/v3/coins/cryptoads-marketplace';
+const boredApeNFT = 'https://api.coingecko.com/api/v3/coins/unicly-bored-ape-yacht-club-collection?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true';
+const wizardsdragonsNFT = 'https://api.coingecko.com/api/v3/coins/wizards-and-dragons?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true';
+const metaheroNFT = 'https://api.coingecko.com/api/v3/coins/metahero?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true';
 
 
 async function getCryptocurrentprices()
@@ -13,7 +13,7 @@ async function getCryptocurrentprices()
     const nft2 = await response2.json();
     console.log(nft2.coingecko_score);
 
-    const response3 = await fetch(cryptoToadsNFT);
+    const response3 = await fetch(metaheroNFT);
     const nft3 = await response3.json();
     console.log(nft3.coingecko_score);
 
