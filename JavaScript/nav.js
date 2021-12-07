@@ -38,7 +38,7 @@ const dataj = [
 
 const exam = [
 
-    { title:"Data-drivenArtwork",  
+    { title:"Data-DrivenArt",  
     
     href: "../Exam/Data5.html"},
     
