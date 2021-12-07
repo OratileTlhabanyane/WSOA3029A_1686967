@@ -1,7 +1,7 @@
 
 const blogs = [
 
-{ title: "Theory Blogs", 
+{ title: "BLOGS", 
 href: "../TheoryBlogPosts/BlogPage.html"},
 
 { title: "BLOG 1", 
